@@ -44,7 +44,11 @@ module.exports = {
       platforms: ['darwin', 'linux'],
       config: {
         // Config here
-      }
+      } 
+      // can also be a function taking the currently built arch as a parameter and returning a config object, e.g.
+      //config: (arch) => ({
+      // ...
+      //})
     }
   ]
 };
