@@ -35,20 +35,21 @@ Each maker has to be configured in the `makers` section of your forge configurat
 
 {% tab title="forge.config.js" %}
 ```javascript
-// If you have set config.forge to a JavaScript file path in package.json:
-// Only showing the relevant configuration for brevity
 module.exports = {
   makers: [
     {
       name: '@electron-forge/maker-zip',
       platforms: ['darwin', 'linux'],
       config: {
-        // Config here
-      } 
-      // can also be a function taking the currently built arch as a parameter and returning a config object, e.g.
-      //config: (arch) => ({
-      // ...
-      //})
+        // 
+      }
+    },
+    {
+      name: '@electron-forge/maker-dmg',
+      platforms: ['darwin'],
+      config: (arch) => ({
+        // can also be a function taking the currently built arch as a parameter and returning a config object, e.g.
+      })
     }
   ]
 };
